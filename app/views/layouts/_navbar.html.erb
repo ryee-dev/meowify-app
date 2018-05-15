@@ -1,0 +1,17 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-start">
+    <%= link_to "Home", root_path, class: "navbar-item" %>
+  </div>
+
+  <div class="navbar-end">
+    <div class="navbar-item">
+      <% if current_user %>
+        Welcome,&nbsp;<strong><%= current_user.username %></strong>&nbsp;|&nbsp;
+        <span class="nav-links"><%= link_to "Sign out", '/users/sign_out', method: 'delete' %></span>
+      <% else %>
+        <span class="nav-links"><%= link_to "Sign in", '/users/sign_in' %></span>&nbsp;|&nbsp;
+        <span class="nav-links"><%= link_to "Sign up", '/users/sign_up' %></span>
+      <% end %>
+    </div>
+  </div>
+</nav>
