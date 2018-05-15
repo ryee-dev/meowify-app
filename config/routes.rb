@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
 
-  resources :user do
+  resources :users do
     resources :cats
   end
 

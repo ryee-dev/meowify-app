@@ -8,4 +8,15 @@ class CatsController < ApplicationController
     @cat = Cat.find(params[:id])
     render :show
   end
+
+  def new
+    @user = User.find(params[:user_id])
+    @cat = @user.cats.new
+
+
+    # @user = User.find(params[:id])
+    # @user.cats
+    # @cat = Cat.new
+    render :new
+  end
 end

@@ -15,11 +15,14 @@
  */
 
 @import 'bulma';
+@import url("https://use.typekit.net/grb0fol.css");
 
 @import 'navbar';
 @import 'meow-lounge';
+@import 'home';
 
 html, body {
+  font-family: Como;
   height: 100%;
   width: 100%;
   background-color: mintcream;
