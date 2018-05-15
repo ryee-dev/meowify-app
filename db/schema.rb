@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2018_05_15_074417) do
   enable_extension "plpgsql"
 
   create_table "cats", force: :cascade do |t|
+    t.integer "user_id"
     t.string "name"
     t.string "caption"
     t.string "breed"

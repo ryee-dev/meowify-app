@@ -1,3 +1,65 @@
 <div class="section container meow-lounge">
   <h1>Meow Lounge</h1>
+
+  <div class="lounge">
+    <% @cats.each do |cat| %>
+      <div class="box cat-box">
+        <div class="row columns">
+          <div class="column is-one-quarter label">
+            Name:
+          </div>
+          <div class="column is-three-quarters details">
+            <%= cat.name %>
+          </div>
+        </div>
+
+        <div class="row columns">
+          <div class="column is-one-quarter label">
+            Caption:
+          </div>
+          <div class="column is-three-quarters details">
+            <%= cat.caption %>
+          </div>
+        </div>
+
+        <div class="row columns">
+          <div class="column is-one-quarter label">
+            Breed:
+          </div>
+          <div class="column is-three-quarters details">
+            <%= cat.breed %>
+          </div>
+        </div>
+
+        <div class="row columns">
+          <div class="column is-one-quarter label">
+            Expression:
+          </div>
+          <div class="column is-three-quarters details">
+            <%= cat.expression %>
+          </div>
+        </div>
+
+        <div class="row columns">
+          <div class="column is-one-quarter label">
+            Pose:
+          </div>
+          <div class="column is-three-quarters details">
+            <%= cat.pose %>
+          </div>
+        </div>
+
+        <div class="row columns">
+          <div class="column is-one-quarter label">
+            Owner ID:
+          </div>
+          <div class="column is-three-quarters details">
+            <%= cat.user_id %>
+          </div>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+
 </div>
