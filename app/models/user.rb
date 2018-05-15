@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 
+  has_many :cats
+
   attr_writer :login
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
