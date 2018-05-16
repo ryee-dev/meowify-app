@@ -7,6 +7,7 @@
   <div class="navbar-end">
     <div class="navbar-item">
       <% if current_user %>
+        <span class="nav-links"><%= link_to "My Kitty Condo", user_path(current_user.id) %> &nbsp;</span>
         Welcome,&nbsp;<strong><%= current_user.username %></strong>&nbsp;|&nbsp;
         <span class="nav-links"><%= link_to "Sign out", '/users/sign_out', method: 'delete' %></span>
       <% else %>
