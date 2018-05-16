@@ -1,20 +1,15 @@
 Rails.application.routes.draw do
-  root 'home#index'
-
+  root 'homes#index'
   devise_for :users
 
-  # resources :users do
-  #   resources :cats
-  # end
-
-  resources :meowlounge
-
-  resources :kittycreator
-
   resources :users do
-    resources :condo
+    resources :condo do
+      resources :cats
+    end
   end
+  resources :meowlounges
+  resources :kittycreators
 
-  resources :cats
-
+  # get 'condo', action: :show, controller: 'condos'
+  # get ':user', to: 'condos#show', as: :condo
 end

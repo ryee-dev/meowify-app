@@ -1,12 +1,12 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-start">
     <%= link_to "Home", root_path, class: "navbar-item" %>
-    <%= link_to "Meow Lounge", meowlounge_index_path, class: "navbar-item" %>
+    <%= link_to "Meow Lounge", meowlounges_path, class: "navbar-item" %>
   </div>
 
   <div class="navbar-middle">
     <% if current_user %>
-      <span class="nav-links">Welcome,&nbsp;<strong><%= link_to current_user.username, user_condo_index_path(current_user) %></strong>. &nbsp;</span>
+      <span class="nav-links">Welcome,&nbsp;<strong><%= link_to current_user.username, :controller => :cats_controller, action: :show %></strong>. &nbsp;</span>
     <% end %>
   </div>
 

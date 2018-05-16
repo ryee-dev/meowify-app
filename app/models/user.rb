@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_one :condo
+  has_one :condo, dependent: :destroy
+  has_many :cats, dependent: :destroy
   # has_many :cats
   
   attr_writer :login

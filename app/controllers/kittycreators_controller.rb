@@ -1,8 +1,7 @@
-class KittycreatorController < ApplicationController
+class KittycreatorsController < ApplicationController
   def index
     @cats = Cat.all
     @cat = Cat.new
-
     @cat.user_id = current_user.id
     render :index
   end

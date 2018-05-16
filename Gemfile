@@ -60,6 +60,7 @@ gem 'launchy'
 gem 'pry'
 gem 'faker'
 gem 'devise'
+gem 'simple_form'
 
 # Bulma CSS Framework
 gem "bulma-rails", "~> 0.7.1"

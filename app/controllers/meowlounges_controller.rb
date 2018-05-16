@@ -1,4 +1,4 @@
-class MeowloungeController < ApplicationController
+class MeowloungesController < ApplicationController
   def index
     # @cat = Cat.find(params[:id])
 

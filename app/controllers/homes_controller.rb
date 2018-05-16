@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class HomesController < ApplicationController
   def index
     # @user = User.find(params[:user_id])
   end
