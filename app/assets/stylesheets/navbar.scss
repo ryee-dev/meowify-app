@@ -4,7 +4,7 @@
 
   .navbar-item {
     a {
-      font-size: 1.25em;
+      font-size: 1em;
       &:hover {
         font-weight: 400;
         color: black;
@@ -16,8 +16,15 @@
     margin: 0 auto;
   }
 
-  .nav-links {
-    font-size: 0.75em;
-  }
+  .navbar-middle {
+    .nav-links {
+      display: block;
+      margin: 0 auto;
+      font-size: 1.25em;
+    }
 
+    position: relative;
+    margin-top: 0.65em;
+    margin-left: -7em;
+  }
 }

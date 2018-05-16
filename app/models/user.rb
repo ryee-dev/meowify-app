@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-
   has_many :cats
 
   attr_writer :login

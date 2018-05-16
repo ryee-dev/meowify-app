@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   resources :meowlounge
 
+  resources :kittycreator
+
 end
