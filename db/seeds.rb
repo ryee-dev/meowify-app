@@ -16,15 +16,25 @@ Cat.destroy_all
 
   @user_id = User.last.id
 
-  (2).times do |r|
-    Cat.create!(user_id: @user_id,
-                name: Faker::Cat.name,
-                caption: Faker::FamilyGuy.quote,
-                breed: Faker::Cat.breed,
-                expression: Faker::SlackEmoji.people,
-                pose: Faker::Superhero.name)
+  1.times do |k|
+    Condo.create!(user_id: @user_id,
+                name: Faker::DragonBall.character,
+                capacity: Faker::Number.between(1, 3))
+
+    @condo_id = Condo.last.id
+
+    1.times do |r|
+      Cat.create!(user_id: @user_id,
+                  condo_id: @condo_id,
+                  name: Faker::Cat.name,
+                  caption: Faker::FamilyGuy.quote,
+                  breed: Faker::Cat.breed,
+                  expression: Faker::SlackEmoji.people,
+                  pose: Faker::Superhero.name)
+    end
   end
 end
 
 p "Created #{User.count} users"
+p "Created #{Condo.count} condos"
 p "Created #{Cat.count} cats"

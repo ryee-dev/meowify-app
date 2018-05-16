@@ -5,10 +5,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
     @cats = @user.cats
 
-    # @user = current_user
+    @user = current_user
     render :show
   end
 

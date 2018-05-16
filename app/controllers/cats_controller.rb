@@ -1,4 +1,5 @@
 class CatsController < ApplicationController
+
   def index
     @cats = Cat.all
     render :index
@@ -11,6 +12,7 @@ class CatsController < ApplicationController
 
   def new
     @cat = Cat.new
-    # redirect_to 'kittycreator_index_path'
+    redirect_to 'kittycreator_index_path'
   end
+
 end

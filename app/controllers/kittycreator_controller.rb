@@ -17,15 +17,6 @@ class KittycreatorController < ApplicationController
     if @cat.save
       redirect_to root_path
     end
-    # current_user.cats.push(@cat)
-    # if @cat.save!
-    #   flash[:notice] = "Success"
-    #   redirect_to user_path(current_user.id)
-    # else
-    #   render :new
-    # end
-
-    # @cat = Cat.new
   end
 
   def show
