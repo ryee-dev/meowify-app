@@ -1,0 +1,3 @@
+class Kittycreator < ApplicationRecord
+
+end

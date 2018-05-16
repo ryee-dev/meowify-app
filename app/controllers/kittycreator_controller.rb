@@ -4,7 +4,7 @@ class KittycreatorController < ApplicationController
     @cat = Cat.new
 
     @cat.user_id = current_user.id
-    # render :index
+    render :index
   end
 
   def new
@@ -13,24 +13,24 @@ class KittycreatorController < ApplicationController
   end
 
   def create
-    # @cat = Cat.new(cat_params)
-    # @cat.user_id = current_user.id
+    @cat = Cat.new
+    if @cat.save
+      redirect_to root_path
+    end
+    # current_user.cats.push(@cat)
     # if @cat.save!
-    #   redirect_to user_path(@cat.user_id)
+    #   flash[:notice] = "Success"
+    #   redirect_to user_path(current_user.id)
     # else
     #   render :new
     # end
-    @cat = Cat.new
+
+    # @cat = Cat.new
   end
 
   def show
     @cats = Cat.all
     @cat = Cat.find(params[:id])
-  end
-
-  private
-  def cat_params
-    params.require(:cat).permit(:name, :caption, :breed, :expression, :pose)
   end
 
 end

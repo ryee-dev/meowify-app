@@ -11,6 +11,6 @@ class CatsController < ApplicationController
 
   def new
     @cat = Cat.new
-    render :new
+    # redirect_to 'kittycreator_index_path'
   end
 end
