@@ -1,4 +1,38 @@
-<div class="section container">
-  <h1>index</h1>
-  <h2>create cat</h2>
+<div class="section container kittycreator-page">
+  <h1>Kitty Creator</h1>
+  <h1>Index</h1>
+  <hr>
+
+  <%= form_for @cat do |f| %>
+    <%#=  f.hidden_field :user_id, value: current_user.id %>
+
+    <%= f.label :name, class: 'label' %>
+    <%= f.text_field :name, class: 'input' %>
+
+    <br><br>
+
+    <%= f.label :caption, class: 'label' %>
+    <%= f.text_field :caption, class: 'input' %>
+
+    <br><br>
+
+    <%= f.label :breed, class: 'label' %>
+    <span class="select">
+      <%= f.select :breed, options_for_select([['Brown Tabby','brown tabby'], ['Bombay','bombay'], ['Exotic Shorthair', 'exotic shorthair'], ['Siamese', 'siamese'], ['Maine Coon', 'maine coon'], ['Calico', 'calico']]) %>
+    </span>
+
+    <br><br>
+
+    <%= f.label :expression, class: 'label' %>
+    <span class="select">
+      <%= f.select :expression, options_for_select([['Smile','smile'], ['LMAO','lmao'], ['Oh God...', 'ohgod'], ['Ditto', 'ditto'], ['Whatever', 'whatever'], ['I can has a bite?', 'icanhasabite'], ['Angwy','angwy'], ['FURRYWIOUS','furrywious'], ['Wink','wink'], ['Aww Yiss','awwyiss']]) %>
+    </span>
+
+    <br><br>
+
+    <%= f.label :pose, class: 'label' %>
+    <span class="select">
+      <%= f.select :pose, options_for_select([["Standin' Around", "standin' around"], ['Yogatime','yogatime'], ['Storytime', 'storytime'], ['Snacktime', 'snacktime'], ['Chub-Chubs', 'chubchubs']]) %>
+    </span>
+  <% end %>
 </div>
