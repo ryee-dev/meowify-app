@@ -6,7 +6,7 @@
 
   <div class="navbar-middle">
     <% if current_user %>
-      <span class="nav-links">Welcome,&nbsp;<strong><%= link_to current_user.username, :controller => :cats_controller, action: :show %></strong>. &nbsp;</span>
+      <span class="nav-links">Welcome,&nbsp;<strong><%= link_to current_user.username, user_path(current_user) %></strong>. &nbsp;</span>
     <% end %>
   </div>
 

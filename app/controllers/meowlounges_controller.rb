@@ -1,9 +1,9 @@
 class MeowloungesController < ApplicationController
   def index
-    # @cat = Cat.find(params[:id])
-
-    @users = User.all
     @cats = Cat.all
+  end
+
+  def show
 
   end
 end

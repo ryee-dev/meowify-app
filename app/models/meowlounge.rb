@@ -1,0 +1,3 @@
+class Meowlounge < ApplicationRecord
+
+end

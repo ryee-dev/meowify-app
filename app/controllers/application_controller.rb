@@ -3,6 +3,21 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  # helper_method :current_user
+
+  # def current_user
+  #   if session[:user_id]
+  #     @current_user = User.find(session[:user_id])
+  #   end
+  # end
+
+  def current_condo
+    if session[:user_id]
+      @current_user = User.find(session[:user_id])
+      @current_condo = User.find(params[@current_user.id])
+    end
+  end
+
   def configure_permitted_parameters
     added_attrs = [:username, :email, :password, :password_confirmation, :remember_me]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs

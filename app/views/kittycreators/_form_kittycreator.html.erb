@@ -1,0 +1,36 @@
+
+<%= form_for @cat, url: {action: "create"}, html: {class: "kittycreator-form"} do |f| %>
+  <%= form_for (@cat) do |f| %>
+    <div class="form_field">
+      <%= f.text_field :name, placeholder: "name" %>
+      <%= f.text_field :caption, placeholder: "caption" %>
+
+      <%= f.label :breed, class: 'label' %>
+
+      <span class="select">
+        <%= f.select :breed, options_for_select([['Brown Tabby','brown tabby'], ['Bombay','bombay'], ['Exotic Shorthair', 'exotic shorthair'], ['Siamese', 'siamese'], ['Maine Coon', 'maine coon'], ['Calico', 'calico']]) %>
+      </span>
+    </div>
+
+    <br><br>
+
+    <div class="form_field">
+      <%= f.label :expression, class: 'label' %>
+      <span class="select">
+        <%= f.select :expression, options_for_select([['Smile','smile'], ['LMAO','lmao'], ['Oh God...', 'ohgod'], ['Ditto', 'ditto'], ['Whatever', 'whatever'], ['I can has a bite?', 'icanhasabite'], ['Angwy','angwy'], ['FURRYWIOUS','furrywious'], ['Wink','wink'], ['Aww Yiss','awwyiss']]) %>
+      </span>
+    </div>
+
+    <br><br>
+    <div class="form_field">
+      <%= f.label :pose, class: 'label' %>
+      <span class="select">
+        <%= f.select :pose, options_for_select([["Standin' Around", "standin' around"], ['Yogatime','yogatime'], ['Storytime', 'storytime'], ['Snacktime', 'snacktime'], ['Chub-Chubs', 'chubchubs']]) %>
+      </span>
+    </div>
+
+  <% end %>
+
+  <%= f.text_area :body, size: "60x12" %>
+  <%= f.submit "Create" %>
+<% end %>

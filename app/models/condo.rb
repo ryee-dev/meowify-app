@@ -3,5 +3,4 @@ class Condo < ApplicationRecord
   has_many :cats, dependent: :destroy
 
   validates :user_id, presence: true
-
 end

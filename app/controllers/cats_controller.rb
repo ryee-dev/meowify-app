@@ -1,18 +1,40 @@
 class CatsController < ApplicationController
+  # before_action :set_cat
 
   def index
     @cats = Cat.all
-    render :index
+  end
+
+  def create
+    @cat = @condo.cats.build(cat_params)
+    @cat.condo_id = current_condo.id
+    if @cat.save
+      flash[:success] = "Cat created"
+      redirect_to :back
+    else
+      flash[:alert] = "Something went wrong"
+      render root_path
+    end
   end
 
   def show
-    @cat = Cat.find(params[:id])
+    @user = current_user
     render :show
   end
 
-  def new
-    @cat = Cat.new
-    redirect_to 'kittycreator_index_path'
+  def destroy
+    @cat = @condo.cats.find(params[:id])
+    @cat.destroy
+    flash[:success] = "Cat removed"
+    redirect_to root_path
   end
 
+  private
+  def cat_params
+    params.require(:cat).permit(:name, :caption, :breed, :expression, :pose)
+  end
+
+  def set_condo
+    @condo = Condo.find(params[:condo_id])
+  end
 end
