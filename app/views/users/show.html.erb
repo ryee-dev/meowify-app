@@ -1,6 +1,6 @@
 <div class="section container kittycondo-page">
-  <h1><strong><%= current_user.username %>'s</strong> kitty condo.</h1>
+  <h1><strong><%= @user_name %>'s</strong> kitty condo.</h1>
   <hr>
 
-  <%= button_to "Create Kitty", kittycreators_path, class: "button is-primary is-rounded" %>
+  <%= button_to "Create Kitty", new_user_condo_cat_path, class: "button is-primary is-rounded" %>
 </div>

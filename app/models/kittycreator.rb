@@ -1,3 +1,2 @@
 class Kittycreator < ApplicationRecord
-
 end

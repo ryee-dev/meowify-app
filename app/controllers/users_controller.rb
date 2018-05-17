@@ -5,11 +5,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
-    @cats = Cat.all
-    #     # @cats = @user.cats
-    #     #
-    #     # @user = current_user
+    # @user_condo_id = current_user.condo_id
+    @user_condo_id = user_condo
+    @user_name = current_user.username
     render :show
   end
 

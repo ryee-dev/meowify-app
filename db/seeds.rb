@@ -6,8 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
-Cat.destroy_all
+# User.destroy_all
+# Condo.destroy_all
+# Cat.destroy_all
 
 10.times do |index|
   User.create!(email: Faker::Internet.email,
@@ -24,8 +25,7 @@ Cat.destroy_all
     @condo_id = Condo.last.id
 
     1.times do |r|
-      Cat.create!(user_id: @user_id,
-                  condo_id: @condo_id,
+      Cat.create!(condo_id: @condo_id,
                   name: Faker::Cat.name,
                   caption: Faker::FamilyGuy.quote,
                   breed: Faker::Cat.breed,

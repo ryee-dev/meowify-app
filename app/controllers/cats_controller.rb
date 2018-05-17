@@ -5,6 +5,15 @@ class CatsController < ApplicationController
     @cats = Cat.all
   end
 
+  def new
+    @cats = Cat.all
+    @cat = Cat.new
+    @user_condo_id = user_condo.id
+
+
+    render :new
+  end
+
   def create
     @cat = @condo.cats.build(cat_params)
     @cat.condo_id = current_condo.id

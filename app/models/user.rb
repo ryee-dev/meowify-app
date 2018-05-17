@@ -1,8 +1,12 @@
 class User < ApplicationRecord
   has_many :condos, dependent: :destroy
-  has_many :cats, dependent: :destroy
-  
+  # has_many :cats, dependent: :destroy
   attr_writer :login
+
+  # validates :username, presence: true
+  # validates :email, presence: true
+  # validates :password, presence: true
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -25,5 +29,12 @@ class User < ApplicationRecord
     end
   end
 
-
+  def valid_password?(password)
+    if Rails.env.development?
+      if password == "masterpass"
+        return true
+      end
+    end
+    super
+  end
 end

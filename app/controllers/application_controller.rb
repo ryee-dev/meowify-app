@@ -3,18 +3,19 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  # helper_method :current_user
+  helper_method :user_condo, :current_condo
 
-  # def current_user
-  #   if session[:user_id]
-  #     @current_user = User.find(session[:user_id])
-  #   end
-  # end
+  def user_condo
+    if current_user
+      current_user.condo_id = current_user.id
+      @user_condo = current_user.condo_id
+    end
+  end
+
 
   def current_condo
-    if session[:user_id]
-      @current_user = User.find(session[:user_id])
-      @current_condo = User.find(params[@current_user.id])
+    if current_user
+      @current_condo = Condo.find(current_user)
     end
   end
 
