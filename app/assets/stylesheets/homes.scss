@@ -1,4 +1,6 @@
 .home-page {
+  position: relative;
+  font-family: Como;
   h1 {
     font-size: 3em;
     text-align: center;
@@ -12,5 +14,15 @@
   .create-kitty {
     display: block;
     margin: 0 auto;
+  }
+
+  .logo {
+    //position: absolute;
+    top: 50%;
+    left: 50%;
+    //transform: translate (-50%, -50%);
+    display: block;
+    margin: auto;
+    margin-top: 10%;
   }
 }

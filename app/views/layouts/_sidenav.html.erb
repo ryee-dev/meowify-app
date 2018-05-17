@@ -1,0 +1,55 @@
+<div class="menu">
+  <p class="menu-label">
+    <br>
+    <% if current_user %>
+      <span class="greeting">Welcome,&nbsp;<strong><%= current_user.username %></strong>.</span>
+    <% else %>
+      Welcome.
+    <% end %>
+  </p>
+
+  <hr>
+
+  <p class="menu-label">
+    Home
+  </p>
+  <% if current_user %>
+    <ul class="menu-list">
+      <li><%= link_to "My Kitty Condo", user_path(current_user) %></li>
+    </ul>
+  <% end %>
+
+  <br>
+
+  <p class="menu-label">
+    Visit
+  </p>
+  <ul class="menu-list">
+    <li><%= link_to "Meow Lounge", meowlounges_path %></li>
+    <li><%= link_to "Cat Shop", kittycreators_path %></li>
+    <li><a>coming soon</a></li>
+  </ul>
+
+  <br>
+
+  <p class="menu-label">
+    Bookmarks
+  </p>
+  <ul class="menu-list">
+    <li class="unavailable"><a>Ameowzon</a></li>
+    <li class="unavailable"><a>Meowspace</a></li>
+    <li class="unavailable"><a>/r/cats</a></li>
+  </ul>
+  <br><br><br><br><br><br><br><br><br><br>
+
+  <% if current_user %>
+    <ul class="menu-list">
+      <li><%= link_to "Sign out", '/users/sign_out', method: 'delete' %></li>
+    </ul>
+  <% else %>
+    <ul class="menu-list">
+      <li><%= link_to "Sign in", '/users/sign_in' %></li>
+      <li><%= link_to "Sign up", '/users/sign_up' %></li>
+    </ul>
+  <% end %>
+</div>

@@ -10,7 +10,14 @@
   </head>
 
   <body>
-    <%= render 'layouts/navbar' %>
-    <%= yield %>
+    <div class="columns">
+      <div class="sidenav column is-one-fifth">
+        <%= render 'layouts/sidenav' %>
+      </div>
+
+      <div class="column is-four-fifths">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

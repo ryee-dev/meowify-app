@@ -1,0 +1,32 @@
+.sidenav {
+  //position: absolute;
+  display: block;
+  left: 0;
+  background-color: mistyrose;
+  height: 100%;
+  width: 20%;
+  font-family: Graphie;
+  .menu {
+    margin: 0 1em;
+    //padding: 2em;
+    display: grid;
+
+    p.menu-label {
+      font-size: 1.2em;
+      .greeting {
+        font-size: 1.4em;
+      }
+    }
+    .menu-list {
+      .unavailable {
+        opacity: .75;
+      }
+      a {
+
+        &:hover {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
